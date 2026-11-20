@@ -1,1 +1,527 @@
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F0F0E8">
+<meta name="description" content="دانلود اپلیکیشن لول‌آپ LevelUp؛ نسخه رسمی و به‌روز">
+<title>دانلود لول‌آپ | LevelUp</title>
+
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aminabedi68/Estedad@v10.0.0/dist/font-face.css" rel="stylesheet">
+
+<style>
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body {
+  min-height:100%;
+}
+
+body {
+  font-family:'Estedad','Vazirmatn',sans-serif;
+  background:#F0F0E8;
+  color:#1C4034;
+  min-height:100dvh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Hero */
+
+.hero-visual {
+  position:relative;
+  width:100%;
+  height:43vh;
+  min-height:290px;
+  max-height:430px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#1C4034;
+}
+
+.hero-visual::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(189,215,181,.19),transparent 40%),
+    radial-gradient(circle at 80% 75%,rgba(132,171,144,.19),transparent 45%),
+    linear-gradient(145deg,#285442 0%,#1C4034 55%,#132F27 100%);
+}
+
+.hero-visual::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  opacity:.13;
+  background-image:radial-gradient(rgba(255,255,255,.5) .7px,transparent .7px);
+  background-size:20px 20px;
+  pointer-events:none;
+}
+
+.hero-decoration {
+  position:absolute;
+  width:290px;
+  height:290px;
+  border:1px solid rgba(230,239,219,.13);
+  border-radius:50%;
+}
+
+.hero-decoration::before,
+.hero-decoration::after {
+  content:'';
+  position:absolute;
+  border:1px solid rgba(230,239,219,.12);
+  border-radius:50%;
+}
+
+.hero-decoration::before {
+  inset:25px;
+}
+
+.hero-decoration::after {
+  inset:55px;
+}
+
+.hero-icon {
+  position:relative;
+  z-index:2;
+  width:132px;
+  height:132px;
+  border-radius:34px;
+  display:block;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.28),
+    0 0 65px rgba(196,218,185,.12);
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% {transform:translateY(0);}
+  50% {transform:translateY(-9px);}
+}
+
+/* Main */
+
+.content {
+  position:relative;
+  z-index:3;
+  max-width:470px;
+  margin:-42px auto 0;
+  padding:0 19px;
+}
+
+.card {
+  background:#FAFAF5;
+  border:1px solid rgba(28,64,52,.09);
+  border-radius:27px;
+  padding:30px 23px 25px;
+  box-shadow:
+    0 25px 65px rgba(28,64,52,.10),
+    0 3px 12px rgba(28,64,52,.035);
+  text-align:center;
+  animation:rise .8s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity:0;
+    transform:translateY(22px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Badge */
+
+.badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(28,64,52,.07);
+  border:1px solid rgba(28,64,52,.13);
+  color:#1C4034;
+  font-size:11px;
+  font-weight:800;
+  padding:7px 14px;
+  border-radius:999px;
+  margin-bottom:19px;
+}
+
+.badge .live {
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#4D906B;
+  box-shadow:0 0 0 4px rgba(77,144,107,.13);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% {opacity:1;}
+  50% {opacity:.4;}
+}
+
+/* Typography */
+
+h1 {
+  font-family:'Estedad',sans-serif;
+  font-size:43px;
+  font-weight:900;
+  letter-spacing:-1.5px;
+  line-height:1.3;
+  color:#1C4034;
+  margin-bottom:5px;
+}
+
+h1 span {
+  display:block;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  color:#719080;
+  direction:ltr;
+  margin-top:1px;
+}
+
+.tagline {
+  font-size:13px;
+  color:#78877E;
+  font-weight:500;
+  line-height:2;
+  margin:12px 0 23px;
+}
+
+/* Information */
+
+.stats-row {
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:17px 0;
+  border-top:1px solid rgba(28,64,52,.10);
+  border-bottom:1px solid rgba(28,64,52,.10);
+  margin-bottom:20px;
+}
+
+.stat-mini {
+  text-align:center;
+  flex:1;
+}
+
+.stat-mini + .stat-mini {
+  border-right:1px solid rgba(28,64,52,.10);
+}
+
+.stat-mini .val {
+  display:block;
+  font-size:15px;
+  font-weight:900;
+  color:#1C4034;
+  margin-bottom:4px;
+  direction:ltr;
+}
+
+.stat-mini .lbl {
+  font-size:10px;
+  color:#8A968D;
+  font-weight:600;
+}
+
+/* Security */
+
+.sec-line {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  padding:13px;
+  background:#EDF3EA;
+  border:1px solid rgba(67,119,81,.16);
+  border-radius:14px;
+  margin-bottom:21px;
+  text-align:right;
+}
+
+.check-ic {
+  flex-shrink:0;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background:#D8E9D7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#276345;
+  font-size:15px;
+  font-weight:900;
+}
+
+.sec-line p {
+  font-size:11px;
+  color:#55735E;
+  line-height:1.9;
+  font-weight:500;
+}
+
+.sec-line b {
+  color:#1C4034;
+  font-weight:900;
+}
+
+/* Download */
+
+.btn-inline {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+  padding:16px 18px;
+  background:linear-gradient(135deg,#285642 0%,#1C4034 65%,#153429 100%);
+  color:#fff;
+  text-decoration:none;
+  border-radius:15px;
+  font-size:15px;
+  font-weight:800;
+  box-shadow:
+    0 12px 25px rgba(28,64,52,.22),
+    inset 0 1px 0 rgba(255,255,255,.16);
+  transition:transform .2s,box-shadow .2s;
+}
+
+.btn-inline:active {
+  transform:scale(.98);
+  box-shadow:0 5px 14px rgba(28,64,52,.18);
+}
+
+.btn-inline svg {
+  width:19px;
+  height:19px;
+}
+
+.version {
+  margin-top:14px;
+  font-size:11px;
+  color:#87938A;
+  font-weight:600;
+}
+
+.version b {
+  color:#1C4034;
+  font-weight:900;
+  direction:ltr;
+  display:inline-block;
+}
+
+/* Footer */
+
+.footer {
+  text-align:center;
+  margin-top:22px;
+  padding:15px 0 25px;
+  font-size:11px;
+  color:#849187;
+  font-weight:600;
+}
+
+.footer .ver-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:#426C52;
+}
+
+.footer .v-ck {
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#D6E7D5;
+  color:#286044;
+  font-size:9px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Responsive */
+
+@media (max-height:720px) {
+  .hero-visual {
+    height:37vh;
+    min-height:230px;
+  }
+
+  .hero-icon {
+    width:110px;
+    height:110px;
+    border-radius:27px;
+  }
+
+  .card {
+    padding:25px 20px 22px;
+  }
+
+  h1 {
+    font-size:36px;
+  }
+
+  .tagline {
+    margin:9px 0 17px;
+  }
+
+  .stats-row {
+    padding:13px 0;
+    margin-bottom:16px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero-visual">
+  <div class="hero-decoration"></div>
+
+  <img
+    src="icon.png"
+    alt="آیکون اپلیکیشن لول‌آپ"
+    class="hero-icon"
+    id="appIcon"
+  >
+</div>
+
+<main class="content">
+
+  <section class="card">
+
+    <div class="badge">
+      <span class="live"></span>
+      آخرین نسخه منتشرشده
+    </div>
+
+    <h1>
+      لول‌آپ
+      <span>LEVEL UP</span>
+    </h1>
+
+    <p class="tagline">
+      تجربه‌ای متفاوت، ساده و هوشمند
+      <br>
+      اپلیکیشن رسمی لول‌آپ را دریافت کنید.
+    </p>
+
+    <div class="stats-row">
+
+      <div class="stat-mini">
+        <span class="val">Android</span>
+        <span class="lbl">سیستم‌عامل</span>
+      </div>
+
+      <div class="stat-mini">
+        <span class="val">9.22.03</span>
+        <span class="lbl">شماره نسخه</span>
+      </div>
+
+      <div class="stat-mini">
+        <span class="val">APK</span>
+        <span class="lbl">فرمت نصب</span>
+      </div>
+
+    </div>
+
+    <div class="sec-line">
+      <div class="check-ic">✓</div>
+      <p>
+        <b>بدون نیاز به هیچ‌گونه دسترسی</b>
+        <br>
+        این اپلیکیشن برای اجرا به دسترسی‌های دستگاه شما نیاز ندارد.
+      </p>
+    </div>
+
+    <a
+      href="https://github.com/iran98ir/amiatgostar-apk/raw/refs/heads/main/levelup.apk"
+      class="btn-inline"
+      id="downloadBtn"
+      rel="noopener"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12"/>
+        <path d="m7 10 5 5 5-5"/>
+        <path d="M5 21h14"/>
+      </svg>
+      دانلود و نصب اپلیکیشن
+    </a>
+
+    <div class="version">
+      آخرین نسخه:
+      <b>9.22.03</b>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="ver-badge">
+      <span class="v-ck">✓</span>
+      نسخه رسمی اپلیکیشن لول‌آپ
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+
+  // مخزن اصلی اپلیکیشن
+  var repo = 'iran98ir/amiatgostar-apk';
+
+  // لینک مستقیم دانلود APK
+  var apkUrl =
+    'https://github.com/' +
+    repo +
+    '/raw/refs/heads/main/levelup.apk';
+
+  var btn = document.getElementById('downloadBtn');
+
+  // تنظیم لینک دانلود
+  btn.href = apkUrl;
+
+  // جایگزین آیکون در صورت نبود تصویر
+  var img = document.getElementById('appIcon');
+
+  img.onerror = function(){
+
+    img.outerHTML =
+      '<div class="hero-icon" style="' +
+      'background:#F0F0E8;' +
+      'display:flex;' +
+      'align-items:center;' +
+      'justify-content:center;' +
+      'color:#1C4034;' +
+      'font-size:28px;' +
+      'font-weight:900;' +
+      'letter-spacing:-2px;' +
+      'direction:ltr;' +
+      '">LEVEL<br>UP</div>';
+
+  };
+
+})();
+</script>
+
+</body>
+</html>
